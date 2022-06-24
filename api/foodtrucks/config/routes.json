@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/foodtrucks",
+      "handler": "foodtrucks.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/foodtrucks/count",
+      "handler": "foodtrucks.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/foodtrucks/:id",
+      "handler": "foodtrucks.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/foodtrucks",
+      "handler": "foodtrucks.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/foodtrucks/:id",
+      "handler": "foodtrucks.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/foodtrucks/:id",
+      "handler": "foodtrucks.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

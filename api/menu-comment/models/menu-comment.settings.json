@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menu_comments",
+  "info": {
+    "name": "Menu_comments",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    },
+    "menu": {
+      "model": "menus",
+      "via": "comments"
+    },
+    "author": {
+      "via": "menu_comments",
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

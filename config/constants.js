@@ -1,0 +1,9 @@
+const ADMIN_ROLE = 3
+const CONTACT_ROLE = 4
+const CLIENT_ROLE = 5
+
+module.exports = {
+  ADMIN_ROLE : ADMIN_ROLE,
+  CONTACT_ROLE : CONTACT_ROLE,
+  CLIENT_ROLE : CLIENT_ROLE
+}

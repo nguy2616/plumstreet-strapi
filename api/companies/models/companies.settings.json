@@ -1,0 +1,96 @@
+{
+  "kind": "collectionType",
+  "collectionName": "companies",
+  "info": {
+    "name": "Companies",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "bankName": {
+      "type": "string"
+    },
+    "bankAddress": {
+      "type": "string"
+    },
+    "BankZIP": {
+      "type": "string"
+    },
+    "bankCity": {
+      "type": "string"
+    },
+    "IBAN": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "zip": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "cuisine_types": {
+      "via": "companies",
+      "collection": "cuisine-types",
+      "dominant": true
+    },
+    "category": {
+      "model": "categories"
+    },
+    "legal_form": {
+      "model": "legal-forms"
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "photos": {
+      "collection": "photos"
+    },
+    "menus": {
+      "via": "company",
+      "collection": "menus"
+    },
+    "country": {
+      "type": "string"
+    },
+    "bankCountry": {
+      "type": "string"
+    },
+    "contacts": {
+      "via": "company",
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "special_diets": {
+      "via": "companies",
+      "collection": "special-diets"
+    },
+    "foodtrucks": {
+      "via": "company",
+      "collection": "foodtrucks"
+    }
+  }
+}

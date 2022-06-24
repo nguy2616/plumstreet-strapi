@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "special-diets",
+  "info": {
+    "name": "Special_diets",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "companies": {
+      "collection": "companies",
+      "via": "special_diets",
+      "dominant": true
+    },
+    "menus": {
+      "collection": "menus",
+      "via": "special_diets",
+      "dominant": true
+    },
+    "menu_items": {
+      "via": "special_diets",
+      "collection": "menu-items",
+      "dominant": true
+    }
+  }
+}

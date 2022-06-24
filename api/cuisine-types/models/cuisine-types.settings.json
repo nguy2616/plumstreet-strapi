@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cuisine_types",
+  "info": {
+    "name": "Cuisine_types",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "companies": {
+      "via": "cuisine_types",
+      "collection": "companies"
+    },
+    "menus": {
+      "collection": "menus",
+      "via": "cuisine_types",
+      "dominant": true
+    },
+    "menu_items": {
+      "via": "cuisine_types",
+      "collection": "menu-items",
+      "dominant": true
+    }
+  }
+}

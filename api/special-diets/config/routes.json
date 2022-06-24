@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/special-diets",
+      "handler": "special-diets.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/special-diets/count",
+      "handler": "special-diets.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/special-diets/:id",
+      "handler": "special-diets.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/special-diets",
+      "handler": "special-diets.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/special-diets/:id",
+      "handler": "special-diets.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/special-diets/:id",
+      "handler": "special-diets.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

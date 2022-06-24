@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menus",
+  "info": {
+    "name": "menus",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "isStandard": {
+      "type": "boolean"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "company": {
+      "via": "menus",
+      "model": "companies"
+    },
+    "menu_items": {
+      "via": "menu",
+      "collection": "menu-items"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "special_diets": {
+      "via": "menus",
+      "collection": "special-diets"
+    },
+    "cuisine_types": {
+      "via": "menus",
+      "collection": "cuisine-types"
+    },
+    "comments": {
+      "via": "menu",
+      "collection": "menu-comment"
+    }
+  }
+}

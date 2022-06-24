@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "name": "Events",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "guests": {
+      "type": "integer"
+    },
+    "date": {
+      "type": "date"
+    },
+    "event_type": {
+      "model": "event-types"
+    },
+    "budget": {
+      "type": "integer"
+    },
+    "location_address": {
+      "type": "string"
+    },
+    "location_city": {
+      "type": "string"
+    },
+    "location_zip": {
+      "type": "string"
+    },
+    "location_country": {
+      "type": "string"
+    },
+    "cuisine_types": {
+      "collection": "cuisine-types"
+    },
+    "special_diets": {
+      "collection": "special-diets"
+    },
+    "service": {
+      "type": "string"
+    },
+    "other": {
+      "type": "string"
+    },
+    "location_name": {
+      "type": "string"
+    },
+    "client": {
+      "via": "events",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "foodtrucks": {
+      "collection": "foodtrucks"
+    },
+    "menu_item_groups": {
+      "collection": "menu-item-groups"
+    },
+    "event_services": {
+      "collection": "event-services"
+    },
+    "name": {
+      "type": "string"
+    },
+    "fav_menus": {
+      "collection": "menus"
+    },
+    "fav_menu_items": {
+      "collection": "menu-items"
+    }
+  }
+}

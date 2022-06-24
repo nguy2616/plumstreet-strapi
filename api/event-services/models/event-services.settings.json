@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_services",
+  "info": {
+    "name": "Event_services"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

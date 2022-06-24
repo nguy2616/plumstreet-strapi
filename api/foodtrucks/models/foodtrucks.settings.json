@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "foodtrucks",
+  "info": {
+    "name": "Foodtrucks",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "carModel": {
+      "type": "string"
+    },
+    "carID": {
+      "type": "string"
+    },
+    "carLength": {
+      "type": "integer"
+    },
+    "width": {
+      "type": "integer"
+    },
+    "height": {
+      "type": "integer"
+    },
+    "amperage": {
+      "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "company": {
+      "model": "companies",
+      "via": "foodtrucks"
+    },
+    "other": {
+      "type": "richtext"
+    }
+  }
+}

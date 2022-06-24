@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/cuisine-types",
+      "handler": "cuisine-types.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/cuisine-types/count",
+      "handler": "cuisine-types.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/cuisine-types/:id",
+      "handler": "cuisine-types.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/cuisine-types",
+      "handler": "cuisine-types.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/cuisine-types/:id",
+      "handler": "cuisine-types.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/cuisine-types/:id",
+      "handler": "cuisine-types.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

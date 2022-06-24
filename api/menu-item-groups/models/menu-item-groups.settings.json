@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menu_item_groups",
+  "info": {
+    "name": "MenuItemGroups",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "menu_items": {
+      "via": "menu_item_group",
+      "collection": "menu-items"
+    },
+    "order": {
+      "type": "integer"
+    }
+  }
+}

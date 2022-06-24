@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menu_items",
+  "info": {
+    "name": "menuItems",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "text"
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "cost": {
+      "type": "decimal"
+    },
+    "menu": {
+      "via": "menu_items",
+      "model": "menus"
+    },
+    "menu_item_group": {
+      "via": "menu_items",
+      "model": "menu-item-groups"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "special_diets": {
+      "via": "menu_items",
+      "collection": "special-diets"
+    },
+    "cuisine_types": {
+      "via": "menu_items",
+      "collection": "cuisine-types"
+    }
+  }
+}

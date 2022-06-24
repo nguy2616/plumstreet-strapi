@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menu_item_categories",
+  "info": {
+    "name": "menuItemCategories",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "menu_items": {
+      "collection": "menu-items"
+    }
+  }
+}
