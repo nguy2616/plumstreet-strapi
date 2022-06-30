@@ -23,6 +23,9 @@
       "via": "menu_comments",
       "plugin": "users-permissions",
       "model": "user"
+    },
+    "event": {
+      "model": "events"
     }
   }
 }

@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proposals",
+  "info": {
+    "name": "proposals",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "company": {
+      "via": "received_proposals",
+      "model": "companies"
+    },
+    "event": {
+      "via": "sent_proposals",
+      "model": "events"
+    },
+    "proposal_menus": {
+      "via": "proposal",
+      "collection": "proposal-menus"
+    },
+    "isQuo": {
+      "type": "boolean",
+      "default": false
+    },
+    "date": {
+      "type": "date"
+    },
+    "subtotal": {
+      "type": "decimal"
+    },
+    "discount": {
+      "type": "decimal"
+    },
+    "tax": {
+      "type": "decimal"
+    },
+    "totaldue": {
+      "type": "decimal"
+    },
+    "amountDiscount": {
+      "type": "decimal"
+    },
+    "amountTax": {
+      "type": "decimal"
+    }
+  }
+}

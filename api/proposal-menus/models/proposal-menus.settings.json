@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proposal_menus",
+  "info": {
+    "name": "proposal_menus",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "proposal_items": {
+      "collection": "menu-items"
+    },
+    "proposal": {
+      "via": "proposal_menus",
+      "model": "proposals"
+    },
+    "name": {
+      "type": "string"
+    },
+    "note": {
+      "type": "richtext"
+    }
+  }
+}

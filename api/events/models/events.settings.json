@@ -73,6 +73,10 @@
     },
     "fav_menu_items": {
       "collection": "menu-items"
+    },
+    "sent_proposals": {
+      "via": "event",
+      "collection": "proposals"
     }
   }
 }

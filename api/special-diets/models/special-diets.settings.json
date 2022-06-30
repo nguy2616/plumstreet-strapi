@@ -16,8 +16,8 @@
       "type": "string"
     },
     "companies": {
-      "collection": "companies",
       "via": "special_diets",
+      "collection": "companies",
       "dominant": true
     },
     "menus": {

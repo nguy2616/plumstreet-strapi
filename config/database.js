@@ -4,12 +4,12 @@ module.exports = ({ env }) => ({
     default: {
       connector: 'bookshelf',
       settings: {
-        client: '',
-        host: env('DATABASE_HOST', ''),
-        port: env.int('DATABASE_PORT', ),
-        database: env('DATABASE_NAME', ''),
-        username: env('DATABASE_USERNAME', ''),
-        password: env('DATABASE_PASSWORD', ''),
+        client: 'postgres',
+        host: env('DATABASE_HOST', 'localhost'),
+        port: env.int('DATABASE_PORT', 5432),
+        database: env('DATABASE_NAME', 'plumstreet-db'),
+        username: env('DATABASE_USERNAME', 'postgres'),
+        password: env('DATABASE_PASSWORD', 'redrose12'),
         ssl: env.bool('DATABASE_SSL', false),
       },
       options: {}

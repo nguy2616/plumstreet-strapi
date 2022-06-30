@@ -34,10 +34,18 @@ module.exports = {
       let final_data = [];
       let fav_menus_id = [];
       let user_cmts_id = []
+      let user_events_id = []
+      let price = 0
       let menus = await strapi.query("menus").find(ctx.query)
 
       menus.map(menu => sanitizeEntity(menu, { model: strapi.models.menu }));
 
+    menus.forEach(menu => {
+      menu.menu_items.forEach(item => {
+        price += Number(item.cost)
+        menu.price = price
+      })
+    });
      // add favorites menu if user is client
       if(ctx.state.user && (ctx.state.user.role.id == constants.CLIENT_ROLE)) {
         const login_user = await getLoginUser(ctx);
@@ -52,17 +60,26 @@ module.exports = {
             return obj['id']
           })
         }
+
+        if (login_user.events.length > 0) {
+          user_events_id = login_user.events.map(function(obj) {
+            return obj['id']
+          })
+        }
       }
 
       // add isFav field to data
       menus.forEach(menu => {
         //const isFav = fav_menus_id.includes(menu.id);
+
         menu.isFav = false
-        menu.comments.forEach(cmt => {
-          if (user_cmts_id.includes(cmt.id)) {
+        menu.comments.forEach(cmt => { // get the comment
+          if (user_cmts_id.includes(cmt.id) && user_events_id.includes(cmt.event)) {
             menu.note = cmt
           }
         })
+
+
         final_data.push(menu)
       });
 
@@ -78,10 +95,17 @@ module.exports = {
     let final_menu = null
     let fav_items_id = []
     let user_cmts_id = []
+    let user_events_id = []
+    let price = 0
 
     const menu = await strapi
     .query("menus")
     .findOne({ id: ctx.params.id });
+
+    menu.menu_items.forEach(item => {
+      price += Number(item.cost)
+      menu.price = price
+    })
 
     if(ctx.state.user && (ctx.state.user.role.id == constants.CLIENT_ROLE)) {
       // add favorite items
@@ -96,6 +120,11 @@ module.exports = {
           return obj['id']
         })
       }
+      if (login_user.events.length > 0) {
+        user_events_id = login_user.events.map(function(obj) {
+          return obj['id']
+        })
+      }
     }
     await menu.menu_items.forEach(item => {
       //const isFav =  fav_items_id.includes(item.id);
@@ -103,11 +132,10 @@ module.exports = {
     });
     //add user comment
     await menu.comments.forEach(cmt => {
-      if (user_cmts_id.includes(cmt.id)) {
+      if (user_cmts_id.includes(cmt.id) && user_events_id.includes(cmt.event)) {
         menu.note = cmt
       }
     })
-
 
     final_menu = await menu
 

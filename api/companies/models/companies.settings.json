@@ -91,6 +91,10 @@
     "foodtrucks": {
       "via": "company",
       "collection": "foodtrucks"
+    },
+    "received_proposals": {
+      "via": "company",
+      "collection": "proposals"
     }
   }
 }

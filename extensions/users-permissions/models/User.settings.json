@@ -84,8 +84,8 @@
       "type": "boolean"
     },
     "company": {
-      "model": "companies",
-      "via": "contacts"
+      "via": "contacts",
+      "model": "companies"
     },
     "created_companies": {
       "collection": "companies"

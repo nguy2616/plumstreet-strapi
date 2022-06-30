@@ -43,8 +43,8 @@
       "pluginOptions": {}
     },
     "company": {
-      "model": "companies",
-      "via": "foodtrucks"
+      "via": "foodtrucks",
+      "model": "companies"
     },
     "other": {
       "type": "richtext"
